@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE VAULT</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <aside id="adminDock" class="admin-dock hidden">
+    <div class="admin-dock-title">ADMIN PANEL</div>
+    <div class="admin-dock-body">
+      <div class="admin-row">
+        <button id="toggleMaintenanceBtn" class="small-btn">Maintenance</button>
+        <button id="resetAllBtn" class="small-btn secondary">Reset locks</button>
+      </div>
+
+      <div class="admin-row">
+        <input id="unblockUser" class="mini-input" type="text" placeholder="Unblock username" />
+        <button id="unblockBtn" class="small-btn">Unblock</button>
+      </div>
+
+      <div id="adminSummary" class="admin-summary"></div>
+      <div id="activeUsersList" class="active-users"></div>
+    </div>
+  </aside>
+
+  <main class="shell">
+    <section id="loginView" class="card login-card">
+      <div class="brand">
+        <div class="logo">V</div>
+        <div>
+          <h1>THE VAULT</h1>
+          <p>Private game portal</p>
+        </div>
+      </div>
+
+      <form id="loginForm" class="form">
+        <label>
+          Username
+          <input id="username" type="text" autocomplete="username" placeholder="Your name" />
+        </label>
+
+        <label>
+          Password
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" />
+        </label>
+
+        <button type="submit">Enter Vault</button>
+      </form>
+
+      <p class="hint">After 3 wrong attempts, the account locks for 24 hours.</p>
+      <p id="loginMsg" class="msg"></p>
+    </section>
+
+    <section id="appView" class="app hidden">
+      <header class="topbar card">
+        <div>
+          <h2>THE VAULT</h2>
+          <div id="userBadge" class="badge"></div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="refreshBtn" class="secondary">Refresh</button>
+          <button id="logoutBtn" class="secondary">Logout</button>
+        </div>
+      </header>
+
+      <section id="maintenanceBanner" class="banner hidden">
+        <strong>Maintenance mode is on.</strong>
+        <span>Admins can still view the portal. Regular users only see this screen.</span>
+      </section>
+
+      <section class="hero card">
+        <div>
+          <h3>Game Library</h3>
+          <p id="libraryCount">Loading…</p>
+        </div>
+        <div class="hero-tools">
+          <input id="searchBox" type="text" placeholder="Search games, tags, categories" />
+          <select id="categoryFilter">
+            <option value="">All categories</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="featuredRow" class="featured-row"></section>
+      <section id="gameGrid" class="game-grid"></section>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
