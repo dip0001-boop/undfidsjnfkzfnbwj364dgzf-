@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE VAULT ADMIN</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<div id="login" class="admin-login">
+  <div class="admin-login-card">
+    <div class="shield">⚡</div>
+    <h1>ADMIN CONTROL</h1>
+    <p>THE VAULT administration</p>
+    <form id="adminLogin">
+      <input id="username" placeholder="Admin username" required>
+      <input id="password" type="password" placeholder="Admin password" required>
+      <button>ACCESS DASHBOARD</button>
+    </form>
+    <div id="error"></div>
+  </div>
+</div>
+
+<div id="dashboard" class="hidden">
+  <aside class="sidebar">
+    <div class="admin-logo">THE<br><span>VAULT</span></div>
+    <div class="side-title">ADMINISTRATION</div>
+    <nav>
+      <a class="active" href="#overview">Overview</a>
+      <a href="#users">Users</a>
+      <a href="#activity">Activity</a>
+      <a href="/">Main site</a>
+    </nav>
+    <button id="logout">Log out</button>
+  </aside>
+
+  <main class="content">
+    <header class="header">
+      <div>
+        <div class="eyebrow">CONTROL CENTER</div>
+        <h1>Dashboard</h1>
+      </div>
+      <div id="adminIdentity"></div>
+    </header>
+
+    <section id="overview" class="stats">
+      <div class="stat"><span>ACTIVE USERS</span><strong id="activeCount">0</strong></div>
+      <div class="stat"><span>REGISTERED USERS</span><strong id="userCount">0</strong></div>
+      <div class="stat"><span>LOCKED USERS</span><strong id="lockedCount">0</strong></div>
+      <div class="stat"><span>MAINTENANCE</span><strong id="maintenanceStatus">OFF</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><h2>System control</h2><p>Control what regular users can see.</p></div>
+        <button id="maintenanceToggle" class="control-btn"></button>
+      </div>
+    </section>
+
+    <section id="users" class="panel">
+      <div class="panel-head">
+        <div><h2>Users</h2><p>Accounts, lockouts and identity information.</p></div>
+        <input id="userSearch" class="search" placeholder="Search users">
+      </div>
+      <div id="usersTable"></div>
+    </section>
+
+    <section id="activity" class="panel">
+      <div class="panel-head">
+        <div><h2>Active users</h2><p>Live sessions and recent game history.</p></div>
+        <button id="refresh" class="control-btn secondary">Refresh</button>
+      </div>
+      <div id="activityTable"></div>
+    </section>
+  </main>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>

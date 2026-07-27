@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE VAULT</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="loginScreen" class="screen">
+  <div class="login-card">
+    <div class="vault-mark">V</div>
+    <h1>THE VAULT</h1>
+    <p>Private game library</p>
+    <form id="loginForm">
+      <input id="username" placeholder="Username" autocomplete="username" required>
+      <input id="password" type="password" placeholder="Password" autocomplete="current-password" required>
+      <button>ENTER THE VAULT</button>
+    </form>
+    <div id="loginError"></div>
+  </div>
+</div>
+
+<div id="maintenanceScreen" class="screen hidden">
+  <div class="maintenance-card">
+    <div class="vault-mark">!</div>
+    <h1>UNDER MAINTENANCE</h1>
+    <p>THE VAULT is temporarily unavailable. Please try again later.</p>
+    <button id="maintenanceLogout">Log out</button>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div>
+      <div class="brand">THE <span>VAULT</span></div>
+      <small id="userInfo"></small>
+    </div>
+    <div class="top-actions">
+      <a id="adminLink" class="admin-link hidden" href="/admin">ADMIN PANEL</a>
+      <button id="logout">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">PRIVATE GAME LIBRARY</div>
+        <h2>Play something.</h2>
+        <p>Polished browser games, physics experiments and arcade classics.</p>
+      </div>
+      <input id="search" placeholder="Search games...">
+    </section>
+
+    <section class="toolbar">
+      <div id="count"></div>
+      <select id="category"></select>
+    </section>
+
+    <section id="featured" class="featured"></section>
+    <section id="games" class="game-grid"></section>
+  </main>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
